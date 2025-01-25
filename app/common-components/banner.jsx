@@ -177,9 +177,9 @@ const Banner = ({ title3, title4, title5, title6, bannerItems, bannerLogo, bingS
     animation: "rotate 3s linear infinite",
   };
 
-  const style = typeof document !== 'undefined' ? document.createElement("style") : null;
-  style && (style.innerHTML = rotateKeyframes);
-  style && document.head.appendChild(style);  
+  const style = document.createElement("style");
+  style.innerHTML = rotateKeyframes;
+  document.head.appendChild(style);
 
   const handleLogoHover = () => {
     setShowPizzaNavigator(true);
@@ -206,18 +206,14 @@ const Banner = ({ title3, title4, title5, title6, bannerItems, bannerLogo, bingS
   };
 
   useEffect(() => {
-    // Check if window object is defined (client-side)
-    if (typeof window !== 'undefined') {
-      if (showPizzaNavigator) {
-        document.addEventListener("mousedown", handleClickOutside);
-      } else {
-        document.removeEventListener("mousedown", handleClickOutside);
-      }
-      
-      return () => {
-        document.removeEventListener("mousedown", handleClickOutside);
-      };
+    if (showPizzaNavigator) {
+      document.addEventListener("mousedown", handleClickOutside);
+    } else {
+      document.removeEventListener("mousedown", handleClickOutside);
     }
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
   }, [showPizzaNavigator]);
 
   return (

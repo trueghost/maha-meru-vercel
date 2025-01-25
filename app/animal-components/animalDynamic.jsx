@@ -260,7 +260,7 @@ const AnimalDynamic = ({
         }
   
         // Now find the section element to scroll to
-        const element = document.getElementById(sectionId);
+        const element = document?.getElementById(sectionId);
         if (element) {
           // Listen for the scroll event to check when the scrolling is finished
           const onScroll = () => {
@@ -288,19 +288,21 @@ const AnimalDynamic = ({
       }
     };
   
-    // Ensure page is fully loaded before attempting scroll
-    if (typeof window !== 'undefined') {
-      if (document.readyState === "complete") {
-        scrollToSection();
-      } else {
-        window.addEventListener('load', scrollToSection);
-      }
+  // Check if window is defined (browser environment)
+  if (typeof window !== 'undefined') {
+    if (document.readyState === "complete") {
+      scrollToSection();
+    } else {
+      window.addEventListener('load', scrollToSection);
     }
+  }
 
-    return () => {
+  return () => {
+    if (typeof window !== 'undefined') {
       window.removeEventListener('load', scrollToSection);
       window.removeEventListener('scroll', () => {});
-    };
+    }
+  };
 
   }, [isLoading, sections, animalTitlesItems, hasScrolled, setActiveTitle]);  
 

@@ -16,11 +16,14 @@ import PizzaNavigator from '../common-components/pizzaNavigator';
 import Banner from '../common-components/banner';
 import Aqua from '../aqua-components/aqua';
 import Secondtext from '../aqua-components/secondText';
-import Largecomponent from '../aqua-components/largeComponent';
-import AquaDynamic from '../aqua-components/aquaDynamic';
+// Dynamically import Largecomponent with SSR disabled
+const Largecomponent = dynamic(() => import('../aqua-components/largeComponent'), { ssr: false });
 
-// Dynamically import Footer component
-const Footer = dynamic(() => import('../common-components/footer'));
+// Dynamically import AquaDynamic with SSR disabled
+const AquaDynamic = dynamic(() => import('../aqua-components/aquaDynamic'), { ssr: false });
+
+// Dynamically import Footer component with SSR disabled
+const Footer = dynamic(() => import('../common-components/footer'), { ssr: false });
 
 const Page = () => {
 

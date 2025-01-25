@@ -231,7 +231,7 @@ const AgricultureDynamic = ({
         }
   
         // Now find the section element to scroll to
-        const element = document.getElementById(sectionId);
+        const element = document?.getElementById(sectionId);
         if (element) {
           // Listen for the scroll event to check when the scrolling is finished
           const onScroll = () => {
@@ -260,7 +260,7 @@ const AgricultureDynamic = ({
     };
   
     // Ensure page is fully loaded before attempting scroll
-    if (document.readyState === "complete") {
+    if (document?.readyState === "complete") {
       scrollToSection();
     } else {
       window.addEventListener('load', scrollToSection); // Fallback if DOM is not yet ready

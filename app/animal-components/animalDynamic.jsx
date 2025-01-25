@@ -260,7 +260,7 @@ const AnimalDynamic = ({
         }
   
         // Now find the section element to scroll to
-        const element = document?.getElementById(sectionId);
+        const element = document.getElementById(sectionId);
         if (element) {
           // Listen for the scroll event to check when the scrolling is finished
           const onScroll = () => {
@@ -288,22 +288,17 @@ const AnimalDynamic = ({
       }
     };
   
-  // Check if window is defined (browser environment)
-  if (typeof window !== 'undefined') {
+    // Ensure page is fully loaded before attempting scroll
     if (document.readyState === "complete") {
       scrollToSection();
     } else {
-      window.addEventListener('load', scrollToSection);
+      window.addEventListener('load', scrollToSection); // Fallback if DOM is not yet ready
     }
-  }
-
-  return () => {
-    if (typeof window !== 'undefined') {
+  
+    // Cleanup the event listener when the component unmounts or when the effect re-runs
+    return () => {
       window.removeEventListener('load', scrollToSection);
-      window.removeEventListener('scroll', () => {});
-    }
-  };
-
+    };
   }, [isLoading, sections, animalTitlesItems, hasScrolled, setActiveTitle]);  
 
   // Create refs for each section's animation
@@ -386,20 +381,19 @@ const AnimalDynamic = ({
   };  
 
   useEffect(() => {
+    // Check if screen width is < 1024px
     const isSmallScreen = window.innerWidth < 1024;
-
-    if (typeof document !== 'undefined') {
-      if (visibleSection && isSmallScreen) {
-        document.body.style.overflow = 'hidden';
-      } else {
-        document.body.style.overflow = 'auto';
-      }
+  
+    // Disable scroll when modal is visible and screen width is <= 1024px
+    if (visibleSection && isSmallScreen) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'auto';
     }
-
+  
+    // Clean up by re-enabling scroll when the component unmounts or modal is hidden
     return () => {
-      if (typeof document !== 'undefined') {
-        document.body.style.overflow = 'auto';
-      }
+      document.body.style.overflow = 'auto';
     };
   }, [visibleSection]);
 

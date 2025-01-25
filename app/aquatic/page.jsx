@@ -515,9 +515,9 @@ onMouseLeave={handlePizzaNavigatorLeave}
       <Secondtext title1={title1} title2={title2} subtext={subtext} />
       </div>
       <Aqua title2={title2} subtext={subtext} />
-      <Largecomponent buttonTitles={buttonTitles} aquaItems={aquaItems}  setActiveButton={setActiveTitle} setNextTitle={setNextTitle} nextTitle={nextTitle} nextTitleActive={nextTitleActive} ref={largeComponentRef} activeTitle={activeTitle} setNextTitleActive={setNextTitleActive}/>
+      {/* <Largecomponent buttonTitles={buttonTitles} aquaItems={aquaItems}  setActiveButton={setActiveTitle} setNextTitle={setNextTitle} nextTitle={nextTitle} nextTitleActive={nextTitleActive} ref={largeComponentRef} activeTitle={activeTitle} setNextTitleActive={setNextTitleActive}/>
       <AquaDynamic sections={sections} aquaTitlesItems={aquaTitlesItems} translatedSeeProductsText={translatedSeeProductsText} translatedNextTitle={translatedNextTitle} products={products} 
-      activeTitle={activeTitle} nextTitle={nextTitle} setNextTitleActive={setNextTitleActive} scrollToLargeComponent={scrollToLargeComponent} setActiveTitle={setActiveTitle} isLoading={isLoading} />
+      activeTitle={activeTitle} nextTitle={nextTitle} setNextTitleActive={setNextTitleActive} scrollToLargeComponent={scrollToLargeComponent} setActiveTitle={setActiveTitle} isLoading={isLoading} /> */}
       {/* <Agriculturemain activeTitle={activeTitle}/>
       <Agriculturesec activeTitle={activeTitle}/>
       <Agriculturethree activeTitle={activeTitle}/>

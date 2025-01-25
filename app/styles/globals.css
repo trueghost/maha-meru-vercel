@@ -1,0 +1,116 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  @apply font-poppins;
+  @apply bg-[#EDDDB8]; /* Add missing semicolon */
+  color: rgb(var(--foreground-rgb));
+  background-image: url('/images/bgtexture.webp'); /* Corrected path */
+  width: 100%;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
+
+.page-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.mobile-main {
+  display: none; /* Hide by default */
+}
+
+.web-main {
+  display: block; /* Show by default */
+}
+
+/* For screens smaller than 1024px, show the mobile version */
+@media (max-width: 1024px) {
+  .mobile-main {
+    display: block;
+  }
+  .web-main {
+    display: none;
+  }
+}
+
+@font-face {
+  font-family: 'Optima LT Pro';
+  src: url('../../public/font/optima-lt-std-black.otf');
+  font-weight: 800;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Poppins';
+  src: url('../../public/font/poppins/Poppins-Regular.ttf');
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'BDMsans';
+  src: url('../../public/font/DMSans_24pt-Bold.ttf');
+  font-weight:normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'poppinsSB';
+  src: url('../../public/font/Poppins-SemiBold.ttf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'poppinsM';
+  src: url('../../public/font/Poppins-Medium.ttf');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+
+
+@font-face {
+  font-family: 'Optima LT Pro Bold';
+  src: url('../../public/font/OPTIMA_B.woff') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* Hide scrollbar for Webkit browsers (Chrome, Safari, Edge) */
+.slider-container::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for Firefox */
+.slider-container {
+  -ms-overflow-style: none;  /* Internet Explorer 10+ */
+  scrollbar-width: none;  /* Firefox */
+}

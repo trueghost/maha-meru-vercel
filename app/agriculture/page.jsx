@@ -16,7 +16,7 @@ import PizzaNavigator from '../common-components/pizzaNavigator';
 import Banner from '../common-components/banner';
 import Agriculture from '../agriculture-components/agriculture';
 import Secondtext from '../agriculture-components/secondText';
-import AgricultureDynamic from '../agriculture-components/agricultureDynamic';
+// import AgricultureDynamic from '../agriculture-components/agricultureDynamic';
 
 // Dynamically import Footer component
 const Largecomponent = dynamic(() => import('../agriculture-components/largeComponent'));
@@ -519,8 +519,8 @@ onMouseLeave={handlePizzaNavigatorLeave}
       </div>
       <Agriculture title2={title2} subtext={subtext} />
       <Largecomponent buttonTitles={buttonTitles} agricultureItems={agricultureItems} setActiveButton={setActiveTitle} setNextTitle={setNextTitle} nextTitle={nextTitle} nextTitleActive={nextTitleActive} ref={largeComponentRef} activeTitle={activeTitle} setNextTitleActive={setNextTitleActive} />
-      <AgricultureDynamic sections={sections} agricultureTitlesItems={agricultureTitlesItems} translatedSeeProductsText={translatedSeeProductsText} translatedNextTitle={translatedNextTitle} products={products}
-       activeTitle={activeTitle} nextTitle={nextTitle} setNextTitleActive={setNextTitleActive} scrollToLargeComponent={scrollToLargeComponent} setActiveTitle={setActiveTitle} isLoading={isLoading} />
+      {/* <AgricultureDynamic sections={sections} agricultureTitlesItems={agricultureTitlesItems} translatedSeeProductsText={translatedSeeProductsText} translatedNextTitle={translatedNextTitle} products={products}
+       activeTitle={activeTitle} nextTitle={nextTitle} setNextTitleActive={setNextTitleActive} scrollToLargeComponent={scrollToLargeComponent} setActiveTitle={setActiveTitle} isLoading={isLoading} /> */}
       <Footer footerItems={footerItems} />
       </div>
       </>

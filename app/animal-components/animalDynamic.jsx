@@ -239,6 +239,10 @@ const AnimalDynamic = ({
   // This effect will only run once both sections and titles are loaded
   useEffect(() => {
     const scrollToSection = () => {
+
+      // Ensure we're running only on the client side
+      if (typeof window === "undefined") return;      
+
       if (isLoading || !animalTitlesItems.length || !sections.length || hasScrolled) {
         return;
       }

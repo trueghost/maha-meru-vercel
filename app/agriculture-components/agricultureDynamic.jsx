@@ -209,6 +209,10 @@ const AgricultureDynamic = ({
   const [hasScrolled, setHasScrolled] = useState(false); // Flag to track scroll completion  
 
   useEffect(() => {
+
+  // Ensure we're running only on the client side
+  if (typeof window === "undefined") return;    
+
     const scrollToSection = () => {
       if (isLoading || !agricultureTitlesItems.length || !sections.length || hasScrolled) {
         return;
@@ -270,6 +274,7 @@ const AgricultureDynamic = ({
     return () => {
       window.removeEventListener('load', scrollToSection);
     };
+
   }, [isLoading, sections, agricultureTitlesItems, hasScrolled, setActiveTitle]);  
 
   const playAnimation = (index) => {
@@ -348,6 +353,10 @@ const AgricultureDynamic = ({
   };  
 
   useEffect(() => {
+
+    // Ensure we're running only on the client side
+    if (typeof window === "undefined") return;    
+
     // Check if screen width is < 1024px
     const isSmallScreen = window.innerWidth < 1024;
   

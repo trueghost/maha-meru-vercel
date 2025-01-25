@@ -221,6 +221,10 @@ const AquaDynamic = ({
   // This effect will only run once both sections and titles are loaded
   useEffect(() => {
     const scrollToSection = () => {
+
+      // Ensure we're running only on the client side
+      if (typeof window === "undefined") return;      
+
       if (isLoading || !aquaTitlesItems.length || !sections.length || hasScrolled) {
         return;
       }
@@ -363,6 +367,10 @@ const AquaDynamic = ({
   };  
 
   useEffect(() => {
+
+    // Ensure we're running only on the client side
+    if (typeof window === "undefined") return;    
+
     // Check if screen width is < 1024px
     const isSmallScreen = window.innerWidth < 1024;
   

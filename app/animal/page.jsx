@@ -16,14 +16,12 @@ import PizzaNavigator from '../common-components/pizzaNavigator';
 import Banner from '../common-components/banner';
 import Animal from '../animal-components/animal';
 import Secondtext from '../animal-components/secondText';
-// Dynamically import Largecomponent with SSR disabled
-const Largecomponent = dynamic(() => import('../animal-components/largeComponent'), { ssr: false });
+import Largecomponent from '../animal-components/largeComponent';
+// import AnimalDynamic from '../animal-components/animalDynamic';
 
-// Dynamically import AnimalDynamic with SSR disabled
-const AnimalDynamic = dynamic(() => import('../animal-components/animalDynamic'), { ssr: false });
-
-// Dynamically import Footer component with SSR disabled
-const Footer = dynamic(() => import('../common-components/footer'), { ssr: false });
+// Dynamically import Footer component
+const AnimalDynamic = dynamic(() => import('../animal-components/animalDynamic'));
+const Footer = dynamic(() => import('../common-components/footer'));
 
 const Page = () => {
 

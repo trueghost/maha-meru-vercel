@@ -16,11 +16,11 @@ import PizzaNavigator from '../common-components/pizzaNavigator';
 import Banner from '../common-components/banner';
 import Agriculture from '../agriculture-components/agriculture';
 import Secondtext from '../agriculture-components/secondText';
-// Dynamically import AgricultureDynamic component
-const AgricultureDynamic = dynamic(() => import('../agriculture-components/agricultureDynamic'), { ssr: false });
+import Largecomponent from '../agriculture-components/largeComponent';
+// import AgricultureDynamic from '../agriculture-components/agricultureDynamic';
 
-// Dynamically import Largecomponent with SSR disabled
-const Largecomponent = dynamic(() => import('../agriculture-components/largeComponent'), { ssr: false });
+// Dynamically import Footer component
+const AgricultureDynamic = dynamic(() => import('../agriculture-components/agricultureDynamic'));
 const Footer = dynamic(() => import('../common-components/footer'));
 
 const Page = () => {
